@@ -60,25 +60,20 @@ function getEmi($t){
     $arrDate1 = explode('-',$arr[$i-1]);
     echo date("M j, Y",mktime(0,0,0,$arrDate1[1],$arrDate1[2],$arrDate1[0]));
         ?></td>
-    <td>
-        Rs. 
-        <?php echo number_format(round($r)); ?>.00
+    <td>       
+        $<?php echo number_format(round($r)); ?>.00
     </td>
     <td>
-        Rs. 
-        <?php  echo number_format($t); ?>.00
+        $<?php  echo number_format($t); ?>.00
     </td>
     <td>
-        Rs. 
-        <?php echo number_format($p);  ?>.00
+        $<?php echo number_format($p);  ?>.00
     </td>
-    <td>
-        Rs. 
-        <?php echo number_format($monthly); ?>.00
+    <td>       
+        $<?php echo number_format($monthly); ?>.00
     </td>
-    <td>
-        Rs. 
-        <?php echo number_format(round($e));  ?>.00
+    <td>        
+        $<?php echo number_format(round($e));  ?>.00
     </td>
 </tr>
 <?php
@@ -245,7 +240,7 @@ if(!empty($_POST['principal']) || !empty($_POST['interest']) || !empty($_POST['y
                         Your monthly payment will be:
                     </td>
                     <td>
-                        <span id="monthly">Rs.<?php echo round($monthly); ?>.00</span>
+                        <span id="monthly">$<?php echo round($monthly); ?>.00</span>
                     </td>
                 </tr>
                 <tr>
@@ -300,8 +295,8 @@ if(!empty($_POST['principal']) || !empty($_POST['interest']) || !empty($_POST['y
         getEmi($_POST['principal']); 
     ?>
     <script type="text/ecmascript">
-        document.getElementById("interest").innerHTML="Rs."+<?php echo round($totalint); ?>+".00";
-        document.getElementById("total").innerHTML="Rs."+<?php echo round($tp); ?>+".00";
+        document.getElementById("interest").innerHTML="$"+<?php echo round($totalint); ?>+".00";
+        document.getElementById("total").innerHTML="$"+<?php echo round($tp); ?>+".00";
     </script>
     <?php
     }}
